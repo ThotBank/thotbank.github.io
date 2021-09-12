@@ -1,6 +1,6 @@
 # Update the database each time the original JSON is changed
 
-name: CI
+name: update_original
 
 # Controls when the workflow will run
 on:
