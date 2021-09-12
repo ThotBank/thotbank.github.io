@@ -1,5 +1,7 @@
 # ThotBank2
 
+[![validate](https://github.com/ThotBank/ThotBank2/actions/workflows/validate.yml/badge.svg)](https://github.com/ThotBank/ThotBank2/actions/workflows/validate.yml)
+
 Code and data for the ThotBank project (internal)
 
 ## Structure
