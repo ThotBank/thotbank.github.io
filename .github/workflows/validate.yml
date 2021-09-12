@@ -1,6 +1,6 @@
 # This workflow makes sure the frictionless package and derivates are up-to-date with the latest raw data
 
-name: Validate
+name: validate
 
 # Controls when the action will run. 
 on:
