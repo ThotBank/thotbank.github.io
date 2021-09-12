@@ -350,7 +350,7 @@ def main():
     Entry point for the script.
     """
 
-    input_file = BASE_PATH / "Json_Database_25_3_2020_1.7.json"
+    input_file = BASE_PATH / "Json_Database.json"
     thotbank = read_data(input_file)
     write_db(thotbank)
 
