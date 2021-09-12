@@ -32,3 +32,9 @@ jobs:
       - name: Build quasi-relational database
         run: |
           python3 parse_source.py
+          
+      # Commits the changes back to the repository (users will need to pull)
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Update flattened database from original
