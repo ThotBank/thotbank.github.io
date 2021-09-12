@@ -5,10 +5,10 @@ Convert from the original nested JSON source to a relational format.
 """
 
 import json
-from pprint import pprint
 import csv
 from collections import defaultdict
 from pathlib import Path
+import logging
 
 # Build base path of operation
 BASE_PATH = Path(__file__).parent / "original"
@@ -261,6 +261,8 @@ def read_data(input_file):
     Read data from the JSON source and return it as a structured pre-relational dict.
     """
 
+    logging.info(f"Reading `{input_file}`...")
+
     # Read file and parse data
     with open(input_file, encoding="utf-8") as handler:
         source_json = json.load(handler)
@@ -320,6 +322,8 @@ def write_db(thotbank):
     Write tables as individual tabular files.
     """
 
+    logging.info(f"Writing database to `{BASE_PATH}`...")
+
     db_root = BASE_PATH / "root.tsv"
     write_root(thotbank["root"], db_root)
 
@@ -356,4 +360,5 @@ def main():
 
 
 if __name__ == "__main__":
+    logging.basicConfig(level=logging.DEBUG)
     main()
