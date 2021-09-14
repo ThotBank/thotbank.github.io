@@ -3,19 +3,42 @@
 # --------
 
 profile: data-package
+name: thotbank
+title: "ThotBank database of Coptic wordforms"
+homepage: "https://github.com/ThotBank/ThotBank"
+version: "0.1"
+keywords:
+  - coptic
+  - egyptian
+contributors:
+  - title: "Marwan Kilani"
+    role: author
+  - title: "Tiago Tresoldi"
+    role: maintainer 
 resources:
+  - encoding: utf-8
+    format: yaml
+    hashing: md5
+    name: thotbank.package
+    path: thotbank.package.yaml
+    profile: data-resource
+    scheme: file
   - dialect:
       delimiter: "\t"
     encoding: utf-8
     format: tsv
     hashing: md5
     name: ccl
+    title: "CCL"
+    description: "CCL table"
     path: ccl.tsv
     profile: tabular-data-resource
     schema:
       fields:
         - name: CCL__ID
           type: string
+          constraints:
+            required: true
         - name: CCL__form
           type: string
         - name: CCL__meaning_en
@@ -27,14 +50,20 @@ resources:
     format: tsv
     hashing: md5
     name: ccl_match
+    title: "CCL match"
+    description: "CCL match table"
     path: ccl_match.tsv
     profile: tabular-data-resource
     schema:
       fields:
         - name: match_id
           type: integer
+          constraints:
+            required: true
         - name: ccl_id
           type: string
+          constraints:
+            required: true
     scheme: file
   - dialect:
       delimiter: "\t"
@@ -42,12 +71,16 @@ resources:
     format: tsv
     hashing: md5
     name: matches
+    title: "Matches"
+    description: "Matches table"
     path: matches.tsv
     profile: tabular-data-resource
     schema:
       fields:
         - name: MATCH__ID
           type: integer
+          constraints:
+            required: true
         - name: MATCH__form
           type: any
         - name: MATCH__meaning_en
@@ -65,12 +98,16 @@ resources:
     format: tsv
     hashing: md5
     name: osing
+    title: "Osing"
+    description: "Osing table"
     path: osing.tsv
     profile: tabular-data-resource
     schema:
       fields:
         - name: MATCH
           type: integer
+          constraints:
+            required: true
         - name: Form
           type: string
         - name: Root
@@ -122,14 +159,21 @@ resources:
     format: tsv
     hashing: md5
     name: root
+    title: "Root"
+    description: "Root table"
     path: root.tsv
     profile: tabular-data-resource
     schema:
       fields:
         - name: root_id
           type: integer
+          constraints:
+            required: true
+            unique: true
         - name: root_form
           type: string
+          constraints:
+            required: true
         - name: root_meaning_en
           type: any
         - name: tla_root_form
@@ -141,25 +185,22 @@ resources:
         - name: tla_root_meaning_de
           type: string
     scheme: file
-  - encoding: utf-8
-    format: yaml
-    hashing: md5
-    name: thotbank.package
-    path: thotbank.package.yaml
-    profile: data-resource
-    scheme: file
   - dialect:
       delimiter: "\t"
     encoding: utf-8
     format: tsv
     hashing: md5
     name: tla
+    title: "TLA"
+    description: "TLA table"
     path: tla.tsv
     profile: tabular-data-resource
     schema:
       fields:
         - name: TLA__ID
           type: string
+          constraints:
+            required: true
         - name: TLA__form
           type: string
         - name: TLA__meaning_en
@@ -173,14 +214,20 @@ resources:
     format: tsv
     hashing: md5
     name: tla_match
+    title: "TLA match"
+    description: "TLA match table"
     path: tla_match.tsv
     profile: tabular-data-resource
     schema:
       fields:
         - name: entry_id
           type: integer
+          constraints:
+            required: true
         - name: tla_id
           type: string
+          constraints:
+            required: true
     scheme: file
   - dialect:
       delimiter: "\t"
@@ -188,12 +235,16 @@ resources:
     format: tsv
     hashing: md5
     name: vycichl
+    title: "Vycichl"
+    description: "Vycichl table"
     path: vycichl.tsv
     profile: tabular-data-resource
     schema:
       fields:
         - name: MATCH
           type: integer
+          constraints:
+            required: true
         - name: Root
           type: string
         - name: Reconstruction
