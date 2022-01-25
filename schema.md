@@ -1,5 +1,4 @@
 # ThotBank Schema
-
-'''yaml schema
+```yaml schema
 descriptor: data/thotbank.package.yaml
-'''
+```
