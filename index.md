@@ -15,6 +15,21 @@ descriptor: https://raw.githubusercontent.com/ThotBank/ThotBank/main/data/thotba
 
 Lorem ipsum
 
+'''yaml table
+data: data/root.tsv
+width: 600
+order:
+  - [3, 'desc']
+columns:
+  - data: root_form
+  - data: root_meaning_en
+  - data: tla_root_form
+  - data: tla_root_id
+  - data: tla_root_meaning_en
+  - data: tla_root_meaning_de
+'''
+
+
 ## Header 2
 
 Lorem ipsum
