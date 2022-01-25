@@ -5,7 +5,11 @@ type: primary
 text: This website and the related database are under development
 ```
 
-ThotBank is...
+ThotBank, a part of the Madùwwe project, is a dataset of Coptic words for which an Egyptian etymology has been suggested. The datased provides the Coptic form in unicode, and automatically generated trascription, translation based on the [Comprehensive Coptic Lexicon](http://coptic-dictionary.org/about.cgi) project, the suggested Egyptian etymology with references, a translation of the Egyptian form based on the [Thesaurus Linguae Aegyptiae](http://aaew.bbaw.de/tla/index.html) project, and additional related Coptic and Egyptian words.
+
+Dialectal variants of the Coptic forms will be added soon.
+
+The project is currently in developement, and new entries and new references are added regularly.
 
 ```yaml package
 descriptor: https://raw.githubusercontent.com/ThotBank/ThotBank/main/data/thotbank.package.yaml
