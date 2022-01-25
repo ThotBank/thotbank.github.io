@@ -7,15 +7,15 @@ text: This website and the related database are under development
 
 ThotBank is...
 
-'''yaml package
+```yaml package
 descriptor: https://raw.githubusercontent.com/ThotBank/ThotBank/main/data/thotbank.package.yaml
-'''
+```
 
 ## Header 1
 
 Lorem ipsum
 
-'''yaml table
+```yaml table
 data: data/root.tsv
 width: 600
 order:
@@ -27,8 +27,7 @@ columns:
   - data: tla_root_id
   - data: tla_root_meaning_en
   - data: tla_root_meaning_de
-'''
-
+```
 
 ## Header 2
 
