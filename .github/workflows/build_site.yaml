@@ -33,7 +33,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run livemark
         run: |
-          livemark build
+          livemark build index.md
           
       # Commits the changes back to the repository (users will need to pull)
       - name: Commit changes
