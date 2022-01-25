@@ -7,3 +7,4 @@ site:
 news:
   text: UNDER DEVELOPMENT
 rating:
+  type: None
