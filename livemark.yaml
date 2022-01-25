@@ -6,5 +6,4 @@ site:
   favicon: assets/favicon.ico
 news:
   text: UNDER DEVELOPMENT
-rating:
-  type: None
+links:
