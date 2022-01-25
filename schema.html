@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="descriptor: data/thotbank.package.yaml">
+<meta name="description" content="None">
 <meta name="keywords" content="thotbank,schema">
 <link rel="icon" href="assets/favicon.ico">
 <title>ThotBank Schema | ThotBank</title>
@@ -1214,6 +1214,7 @@ body:not(.with-readability) #livemark-right::-webkit-scrollbar {
 }
 
 </style>
+<link rel="stylesheet" href="https://unpkg.com/frictionless-components@1.0.1/dist/frictionless-components.min.css">
 <style>
 
 #livemark-topics {
@@ -1564,6 +1565,24 @@ body:not(.with-readability) #livemark-right::-webkit-scrollbar {
 }
 
 </style>
+<style>
+
+#livemark-news {
+  display: none;
+  position: fixed;
+  background: yellow;
+  border-bottom: solid 1px #dfe2e5;
+  text-align: center;
+  z-index: 1000000;
+  width: 100%;
+  top: 0;
+}
+
+#livemark-news-close {
+  margin-right: 10px;
+}
+
+</style>
 <link rel="stylesheet" href="https://unpkg.com/paginationjs@2.1.5/dist/pagination.css">
 <style>
 
@@ -1640,13 +1659,21 @@ body:not(.with-readability) #livemark-right::-webkit-scrollbar {
 <div id="livemark-main">
 <div id="livemark-notes">
   Written in <a href="https://livemark.frictionlessdata.io" target="_blank"> Livemark </a><br>
-  (2022-01-25 11:07)
+  (2022-01-25 11:10)
 </div>
 
 <h1>ThotBank Schema</h1>
-<p>'''yaml schema
-descriptor: data/thotbank.package.yaml
-'''</p>
+<div class="livemark-schema">
+  <div id="livemark-schema-1">
+  </div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  const schema = {"contributors": [{"role": "author", "title": "Marwan Kilani"}, {"role": "maintainer", "title": "Tiago Tresoldi"}], "homepage": "https://github.com/ThotBank/ThotBank", "keywords": ["coptic", "egyptian"], "name": "thotbank", "profile": "data-package", "resources": [{"encoding": "utf-8", "format": "yaml", "hashing": "md5", "name": "thotbank.package", "path": "thotbank.package.yaml", "profile": "data-resource", "scheme": "file"}, {"description": "CCL table", "dialect": {"delimiter": "\t"}, "encoding": "utf-8", "format": "tsv", "hashing": "md5", "name": "ccl", "path": "ccl.tsv", "profile": "tabular-data-resource", "schema": {"fields": [{"constraints": {"required": true}, "name": "CCL__ID", "type": "string"}, {"name": "CCL__form", "type": "string"}, {"name": "CCL__meaning_en", "type": "string"}]}, "scheme": "file", "title": "CCL"}, {"description": "CCL match table", "dialect": {"delimiter": "\t"}, "encoding": "utf-8", "format": "tsv", "hashing": "md5", "name": "ccl_match", "path": "ccl_match.tsv", "profile": "tabular-data-resource", "schema": {"fields": [{"constraints": {"required": true}, "name": "match_id", "type": "integer"}, {"constraints": {"required": true}, "name": "ccl_id", "type": "string"}]}, "scheme": "file", "title": "CCL match"}, {"description": "Matches table", "dialect": {"delimiter": "\t"}, "encoding": "utf-8", "format": "tsv", "hashing": "md5", "name": "matches", "path": "matches.tsv", "profile": "tabular-data-resource", "schema": {"fields": [{"constraints": {"required": true}, "name": "MATCH__ID", "type": "integer"}, {"name": "MATCH__form", "type": "any"}, {"name": "MATCH__meaning_en", "type": "any"}, {"name": "MATCH__gram_number", "type": "string"}, {"name": "MATCH__gram_gender", "type": "string"}, {"name": "MATCH__pattern", "type": "any"}]}, "scheme": "file", "title": "Matches"}, {"description": "Osing table", "dialect": {"delimiter": "\t"}, "encoding": "utf-8", "format": "tsv", "hashing": "md5", "name": "osing", "path": "osing.tsv", "profile": "tabular-data-resource", "schema": {"fields": [{"constraints": {"required": true}, "name": "MATCH", "type": "integer"}, {"name": "Form", "type": "string"}, {"name": "Root", "type": "string"}, {"name": "Nominal_class", "type": "string"}, {"name": "Meaning_de", "type": "string"}, {"name": "Pages", "type": "string"}, {"name": "Coptic_S", "type": "string"}, {"name": "Coptic_B", "type": "string"}, {"name": "Coptic_A", "type": "any"}, {"name": "Coptic_A2", "type": "any"}, {"name": "Coptic_Fs", "type": "any"}, {"name": "Coptic_F", "type": "any"}, {"name": "Coptic_M", "type": "any"}, {"name": "Coptic_Sf", "type": "any"}, {"name": "Coptic_O", "type": "any"}, {"name": "Coptic_H", "type": "any"}, {"name": "Coptic_Sa", "type": "any"}, {"name": "Coptic_V", "type": "any"}, {"name": "Coptic_ManiHPK", "type": "any"}, {"name": "Coptic_Mf", "type": "any"}, {"name": "Coptic_Sh", "type": "any"}, {"name": "Coptic_Bf", "type": "any"}, {"name": "Coptic_Copt_undefined", "type": "any"}]}, "scheme": "file", "title": "Osing"}, {"description": "Root table", "dialect": {"delimiter": "\t"}, "encoding": "utf-8", "format": "tsv", "hashing": "md5", "name": "root", "path": "root.tsv", "profile": "tabular-data-resource", "schema": {"fields": [{"constraints": {"required": true, "unique": true}, "name": "root_id", "type": "integer"}, {"constraints": {"required": true}, "name": "root_form", "type": "string"}, {"name": "root_meaning_en", "type": "any"}, {"name": "tla_root_form", "type": "string"}, {"name": "tla_root_id", "type": "integer"}, {"name": "tla_root_meaning_en", "type": "any"}, {"name": "tla_root_meaning_de", "type": "string"}]}, "scheme": "file", "title": "Root"}, {"description": "TLA table", "dialect": {"delimiter": "\t"}, "encoding": "utf-8", "format": "tsv", "hashing": "md5", "name": "tla", "path": "tla.tsv", "profile": "tabular-data-resource", "schema": {"fields": [{"constraints": {"required": true}, "name": "TLA__ID", "type": "string"}, {"name": "TLA__form", "type": "string"}, {"name": "TLA__meaning_en", "type": "string"}, {"name": "TLA__meaning_de", "type": "string"}]}, "scheme": "file", "title": "TLA"}, {"description": "TLA match table", "dialect": {"delimiter": "\t"}, "encoding": "utf-8", "format": "tsv", "hashing": "md5", "name": "tla_match", "path": "tla_match.tsv", "profile": "tabular-data-resource", "schema": {"fields": [{"constraints": {"required": true}, "name": "entry_id", "type": "integer"}, {"constraints": {"required": true}, "name": "tla_id", "type": "string"}]}, "scheme": "file", "title": "TLA match"}, {"description": "Vycichl table", "dialect": {"delimiter": "\t"}, "encoding": "utf-8", "format": "tsv", "hashing": "md5", "name": "vycichl", "path": "vycichl.tsv", "profile": "tabular-data-resource", "schema": {"fields": [{"constraints": {"required": true}, "name": "MATCH", "type": "integer"}, {"name": "Root", "type": "string"}, {"name": "Reconstruction", "type": "string"}, {"name": "Gram_number", "type": "any"}, {"name": "Gram_gender", "type": "string"}, {"name": "Gram_form", "type": "string"}, {"name": "Meaning_fr", "type": "string"}, {"name": "Pages", "type": "integer"}, {"name": "Degree_Certainty", "type": "string"}, {"name": "Relation_cpt__eg_forms", "type": "string"}, {"name": "Coptic_S", "type": "string"}, {"name": "Coptic_B", "type": "string"}, {"name": "Coptic_A", "type": "any"}, {"name": "Coptic_A2", "type": "any"}, {"name": "Coptic_P", "type": "any"}, {"name": "Coptic_F", "type": "any"}, {"name": "Coptic_F0", "type": "any"}, {"name": "Coptic_S0", "type": "any"}, {"name": "Coptic_O", "type": "any"}, {"name": "Coptic_B0", "type": "any"}, {"name": "Coptic_A0", "type": "any"}, {"name": "Coptic_M", "type": "any"}, {"name": "Coptic_L", "type": "any"}, {"name": "Coptic_G", "type": "any"}, {"name": "Coptic_B_Gr", "type": "any"}, {"name": "Coptic_Sf", "type": "any"}, {"name": "Coptic_H", "type": "any"}, {"name": "Coptic_A20", "type": "any"}, {"name": "Coptic_Hf", "type": "any"}]}, "scheme": "file", "title": "Vycichl"}], "title": "ThotBank database of Coptic wordforms", "version": "0.1"}
+  const element = document.getElementById('livemark-schema-1')
+  frictionlessComponents.render(frictionlessComponents.Schema, {schema}, element)
+});
+</script>
 </div>
 <div id="livemark-right">
 
@@ -1657,7 +1684,7 @@ descriptor: data/thotbank.package.yaml
 
 <div id="livemark-about">
   <div>
-    descriptor: data/thotbank.package.yaml
+    None
   </div>
 </div>
 
@@ -1724,6 +1751,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 </script>
+<script src="https://unpkg.com/frictionless-components@1.0.1/dist/frictionless-components.min.js"></script>
 <script src="https://unpkg.com/tocbot@4.12.3/dist/tocbot.min.js"></script>
 <script>
 
@@ -1923,6 +1951,24 @@ document.addEventListener("DOMContentLoaded", function () {
     <span class="bar"></span>
   </div>
 </div>
+
+<div id="livemark-news">
+  UNDER DEVELOPMENT
+  <button id="livemark-news-close" type="button" class="close" title="Close" aria-label="Close">
+    <span aria-hidden="true">×</span>
+  </button>
+</div>
+<script>
+  const key = 'livemark-news-code'
+  const code = 'd4737a59153db24df3fa3d981caa17e8'
+  const news = document.getElementById('livemark-news')
+  const button = document.getElementById('livemark-news-close')
+  if (localStorage.getItem(key) !== code) news.style.display = 'block'
+  button.addEventListener('click', () => {
+    localStorage.setItem(key, code)
+    news.style.display = 'none'
+  })
+</script>
 <script src="https://unpkg.com/paginationjs@2.1.5/dist/pagination.min.js"></script>
 <script>
 
