@@ -7,6 +7,10 @@ text: This website and the related database are under development
 
 ThotBank is...
 
+'''yaml package
+descriptor: https://raw.githubusercontent.com/ThotBank/ThotBank/main/data/thotbank.package.yaml
+'''
+
 ## Header 1
 
 Lorem ipsum
