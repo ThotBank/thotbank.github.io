@@ -34,6 +34,7 @@ jobs:
       - name: Run livemark
         run: |
           livemark build index.md
+          livemark build schema.md
           
       # Commits the changes back to the repository (users will need to pull)
       - name: Commit changes
